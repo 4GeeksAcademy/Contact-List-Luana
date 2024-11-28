@@ -13,7 +13,19 @@ export const Demo = () => {
   const [phone, setPhone] = useState("");
   const navigate = useNavigate ()
   
-  https://playground.4geeks.com/contact/agendas/Luana/contacts/26
+  const agregar = async (e) => {
+    e.preventDefault();
+    let data = {
+      name: fullName,
+      phone: phone,
+      email: email,
+      address: address,
+    };
+     let resp = await actions.createContact(data);
+     if (resp){
+      navigate("/")
+     }
+  };
 
   return (
     <div className="container">
